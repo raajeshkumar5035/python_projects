@@ -1,0 +1,23 @@
+myfile.txt is like below
+{
+  "userId": 1,
+  "id": 1,
+  "title": "delectus aut autem",
+  "completed": false
+}
+
+the question is to print like below
+title is delectus aut autem
+
+the solution follow like below
+import json
+line_number=int(input('enter a line number:'))      #enter which line you need to output
+with open('myfile.txt') as f:
+    current_line = 1
+    my_d = json.load(f)
+    for key, value in my_d.items():
+        if current_line == line_number:
+            #f2.write("{} is {}".format(key, value))      #this will write into a separate file
+            print("{} is {}".format(key, value))
+            break
+        current_line += 1
